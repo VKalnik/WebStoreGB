@@ -18,6 +18,7 @@ namespace WebStore
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllersWithViews();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -29,12 +30,23 @@ namespace WebStore
 
             app.UseRouting();
 
+            //var greeting = "Hello from my first ASP.NET Core App";
+            //var greeting = Configuration["Greetings"];
+            //var logging = Configuration["Logging:LogLevel:Default"];
+
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
+                endpoints.MapGet("/greetings", async context =>
                 {
-                    await context.Response.WriteAsync("Hello World!");
+                    //await context.Response.WriteAsync(greeting);
+                    await context.Response.WriteAsync(Configuration["Greetings"]);
                 });
+
+                //endpoints.MapDefaultControllerRoute();
+                endpoints.MapControllerRoute(
+                    "default",
+                    "{controller=Home}/{action=Index}/{id?}");
+
             });
         }
     }
