@@ -6,7 +6,9 @@ namespace WebStore.Controllers
     {
         public IActionResult Index() // http://locaalhost:5000/Home/Index
         {
-            return Content("Hello from first controller!");
+            //return Content("Hello from first controller!");
+            //return View("Index");
+            return View();
         }
 
         public IActionResult SecondAction(int id)
