@@ -4,6 +4,10 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WebStore.Infrastructure.Conventions;
+using WebStore.Infrastructure.Middleware;
+using WebStore.Sevices;
+using WebStore.Sevices.Interfaces;
 
 namespace WebStore
 {
@@ -18,7 +22,11 @@ namespace WebStore
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews()
+            services.AddSingleton<IEmployeesData, InMemoryEmployeesData>();
+            //services.AddScoped<IEmployeesData, InMemoryEmployeesData>();
+            //services.AddTransient<IEmployeesData, InMemoryEmployeesData>();
+
+            services.AddControllersWithViews(opt => opt.Conventions.Add(new TestControllerConventions()))
                .AddRazorRuntimeCompilation();
         }
 
@@ -33,23 +41,20 @@ namespace WebStore
 
             app.UseRouting();
 
-            //var greeting = "Hello from my first ASP.NET Core App";
-            //var greeting = Configuration["Greetings"];
-            //var logging = Configuration["Logging:LogLevel:Default"];
+            app.UseMiddleware<TestMiddleware>();
+
+            app.UseWelcomePage("/welcome");
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGet("/greetings", async context =>
                 {
-                    //await context.Response.WriteAsync(greeting);
                     await context.Response.WriteAsync(Configuration["Greetings"]);
                 });
 
-                //endpoints.MapDefaultControllerRoute();
                 endpoints.MapControllerRoute(
                     "default",
                     "{controller=Home}/{action=Index}/{id?}");
-
             });
         }
     }
