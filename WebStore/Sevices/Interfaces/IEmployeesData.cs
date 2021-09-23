@@ -3,7 +3,7 @@ using WebStore.Models;
 
 namespace WebStore.Sevices.Interfaces
 {
-    interface IEmployeesData
+    public interface IEmployeesData
     {
         IEnumerable<Employee> GetAll();
 
