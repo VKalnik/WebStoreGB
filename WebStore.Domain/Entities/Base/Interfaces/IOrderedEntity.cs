@@ -2,6 +2,6 @@
 {
     public interface IOrderedEntity : IEntity
     {
-        int Otder { get; }
+        int Order { get; }
     }
 }
