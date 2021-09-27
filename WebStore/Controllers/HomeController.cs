@@ -13,7 +13,8 @@ namespace WebStore.Controllers
         public IActionResult Contacts() => View();
         public IActionResult Login() => View();
         public IActionResult ProductDetails() => View();
-        public IActionResult Shop() => View();
+
+        //public IActionResult Shop() => View();
 
         //public IActionResult Status(string Code) => Content($"Status code - {Code}");
     }
