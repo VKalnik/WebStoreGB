@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using WebStore.Data;
 using WebStore.Models;
 using WebStore.Sevices.Interfaces;
 using WebStore.ViewModels;
