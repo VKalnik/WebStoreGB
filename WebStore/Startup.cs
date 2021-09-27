@@ -23,6 +23,8 @@ namespace WebStore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IEmployeesData, InMemoryEmployeesData>();
+            services.AddSingleton<IProductData, InMemoryProductData>();
+
             //services.AddScoped<IEmployeesData, InMemoryEmployeesData>();
             //services.AddTransient<IEmployeesData, InMemoryEmployeesData>();
 
@@ -37,6 +39,8 @@ namespace WebStore
                 app.UseDeveloperExceptionPage();
             }
 
+            //app.UseStatusCodePages();
+            
             app.UseStaticFiles();
 
             app.UseRouting();
@@ -45,6 +49,8 @@ namespace WebStore
 
             app.UseWelcomePage("/welcome");
 
+            //app.UseStatusCodePagesWithReExecute("~/Home/Status/{0}");
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGet("/greetings", async context =>

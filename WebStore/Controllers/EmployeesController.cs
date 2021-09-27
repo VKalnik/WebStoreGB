@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using WebStore.Data;
 using WebStore.Models;
 using WebStore.Sevices.Interfaces;
 using WebStore.ViewModels;
@@ -60,6 +59,12 @@ namespace WebStore.Controllers
         [HttpPost]
         public IActionResult Edit(EmployeeViewModel model)
         {
+            if (model.LastName == "Асама" && model.Name == "Бин" && model.Patronymic == "Ладан")
+                ModelState.AddModelError("", "Террористов не берём!");
+
+            if (!ModelState.IsValid)
+                return View(model);
+            
             var employee = new Employee()
             {
                 Id = model.Id,
