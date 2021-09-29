@@ -9,7 +9,6 @@ using WebStore.DAL.Context;
 using WebStore.Data;
 using WebStore.Infrastructure.Conventions;
 using WebStore.Infrastructure.Middleware;
-using WebStore.Sevices;
 using WebStore.Sevices.InMemory;
 using WebStore.Sevices.Interfaces;
 
