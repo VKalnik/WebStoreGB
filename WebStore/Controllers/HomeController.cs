@@ -6,8 +6,6 @@ namespace WebStore.Controllers
     {
         public IActionResult Index() => View();
         public IActionResult Error404() => View();
-        public IActionResult Blog() => View();
-        public IActionResult BlogSingle() => View();
         public IActionResult Cart() => View();
         public IActionResult Checkout() => View();
         public IActionResult Contacts() => View();
@@ -16,6 +14,15 @@ namespace WebStore.Controllers
 
         //public IActionResult Shop() => View();
 
-        //public IActionResult Status(string Code) => Content($"Status code - {Code}");
+        public IActionResult Status(string id)
+        {
+            switch (id)
+            {
+                default: return Content($"Status code --- {id}");
+                case "404": return View("Error404");
+            }
+            
+            
+        }
     }
 }
