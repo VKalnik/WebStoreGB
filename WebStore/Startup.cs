@@ -39,8 +39,8 @@ namespace WebStore
                 app.UseDeveloperExceptionPage();
             }
 
-            //app.UseStatusCodePages();
-            
+            app.UseStatusCodePagesWithRedirects("~/Home/Status/{0}");
+
             app.UseStaticFiles();
 
             app.UseRouting();
@@ -49,8 +49,6 @@ namespace WebStore
 
             app.UseWelcomePage("/welcome");
 
-            //app.UseStatusCodePagesWithReExecute("~/Home/Status/{0}");
-            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGet("/greetings", async context =>
