@@ -6,7 +6,7 @@ namespace WebStore.Sevices.Interfaces
     {
         void Add(int Id);
 
-        void Decriment(int Id);
+        void Decrement(int Id);
 
         void Remove(int Id);
 

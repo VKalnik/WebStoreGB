@@ -5,9 +5,11 @@ namespace WebStore.Controllers
     public class HomeController : Controller
     {
         public IActionResult Index() => View();
+
         public IActionResult Error404() => View();
-        public IActionResult Cart() => View();
+
         public IActionResult Checkout() => View();
+
         public IActionResult Contacts() => View();
 
         public IActionResult Status(string id)

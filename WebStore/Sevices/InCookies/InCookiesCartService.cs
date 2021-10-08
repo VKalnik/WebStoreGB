@@ -66,7 +66,7 @@ namespace WebStore.Sevices.InCookies
             Cart = cart;
         }
 
-        public void Decriment(int Id) 
+        public void Decrement(int Id) 
         {
             var cart = Cart;
 
