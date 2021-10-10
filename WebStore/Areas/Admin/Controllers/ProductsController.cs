@@ -16,5 +16,9 @@ namespace WebStore.Areas.Admin.Controllers
             
             return View(products);
         }
+
+        public IActionResult Edit(int id) => RedirectToAction(nameof(Index));
+
+        public IActionResult Delete(int id) => RedirectToAction(nameof(Index));
     }
 }
