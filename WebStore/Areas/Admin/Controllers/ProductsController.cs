@@ -1,0 +1,20 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using WebStore.Sevices.Interfaces;
+
+namespace WebStore.Areas.Admin.Controllers
+{
+    [Area("Admin")]
+    public class ProductsController : Controller
+    {
+        private readonly IProductData _ProductData;
+
+        public ProductsController(IProductData ProductData) => _ProductData = ProductData;
+
+        public IActionResult Index()
+        {
+            var products = _ProductData.GetProducts();
+            
+            return View(products);
+        }
+    }
+}
