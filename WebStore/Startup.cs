@@ -30,8 +30,20 @@ namespace WebStore
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<WebStoreDB>(opt => 
-                opt.UseSqlServer(Configuration.GetConnectionString("SqlServer")));
+            var database_type = Configuration["Database"];
+
+            switch (database_type)
+            {
+                case "SqlServer":
+                    services.AddDbContext<WebStoreDB>(opt =>
+                        opt.UseSqlServer(Configuration.GetConnectionString("SqlServer")));
+                    break;
+
+                case "Sqlite":
+                    services.AddDbContext<WebStoreDB>(opt => opt.UseSqlite(Configuration.GetConnectionString("SqlServer")));
+                    break;
+            }
+            
 
             services.AddIdentity<User, Role>( /*opt => { opt.}*/)
                .AddEntityFrameworkStores<WebStoreDB>()
