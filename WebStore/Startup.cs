@@ -34,13 +34,17 @@ namespace WebStore
 
             switch (database_type)
             {
+                default: throw new InvalidOperationException($"Тип БД {database_type} не поддерживается");
+
                 case "SqlServer":
                     services.AddDbContext<WebStoreDB>(opt =>
-                        opt.UseSqlServer(Configuration.GetConnectionString("SqlServer")));
+                        opt.UseSqlServer(Configuration.GetConnectionString(database_type)));
                     break;
 
                 case "Sqlite":
-                    services.AddDbContext<WebStoreDB>(opt => opt.UseSqlite(Configuration.GetConnectionString("SqlServer")));
+                    services.AddDbContext<WebStoreDB>(opt =>
+                        opt.UseSqlite(Configuration.GetConnectionString(database_type),
+                            o => o.MigrationsAssembly("WebStore.DAL.Sqlite")));
                     break;
             }
             
