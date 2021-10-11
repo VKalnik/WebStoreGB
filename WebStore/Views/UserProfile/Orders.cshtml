@@ -1,9 +1,11 @@
 ﻿@model IEnumerable<UserOrderViewModel>
 @{
     ViewBag.Title = "Профиль пользователя";
+    Layout = "_UserProfileLayout";
+
 }
 
-<div class="container">
+<table class="table">
     <table class="table">
         <thead>
         <tr>
@@ -30,4 +32,4 @@
         }
         </tbody>
     </table>
-</div>
+</table>
