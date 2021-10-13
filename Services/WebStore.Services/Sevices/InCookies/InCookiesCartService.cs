@@ -1,14 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Linq;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
-using WebStore.Domain;
 using WebStore.Domain.Entities;
 using WebStore.Domain.ViewModels;
-using WebStore.Infrastructure.Mapping;
 using WebStore.Interfaces.Services;
+using WebStore.Services.Mapping;
 
-namespace WebStore.Sevices.InCookies
+namespace WebStore.Services.Sevices.InCookies
 {
     public class InCookiesCartService : ICartService
     {
