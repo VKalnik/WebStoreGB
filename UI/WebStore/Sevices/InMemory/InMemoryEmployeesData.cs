@@ -4,7 +4,7 @@ using System.Linq;
 using Microsoft.Extensions.Logging;
 using WebStore.Data;
 using WebStore.Domain.Models;
-using WebStore.Sevices.Interfaces;
+using WebStore.Interfaces.Services;
 
 namespace WebStore.Sevices.InMemory
 {

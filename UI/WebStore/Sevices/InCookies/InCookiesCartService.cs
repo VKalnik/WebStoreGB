@@ -6,7 +6,7 @@ using WebStore.Domain;
 using WebStore.Domain.Entities;
 using WebStore.Domain.ViewModels;
 using WebStore.Infrastructure.Mapping;
-using WebStore.Sevices.Interfaces;
+using WebStore.Interfaces.Services;
 
 namespace WebStore.Sevices.InCookies
 {
