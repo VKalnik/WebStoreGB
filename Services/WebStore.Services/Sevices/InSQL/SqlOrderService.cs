@@ -16,6 +16,7 @@ namespace WebStore.Services.Sevices.InSQL
     {
         private readonly WebStoreDB _db;
         private readonly UserManager<User> _UserManager;
+        private IOrderService _OrderServiceImplementation;
 
         public SqlOrderService(WebStoreDB db, UserManager<User> UserManager)
         {
@@ -23,7 +24,7 @@ namespace WebStore.Services.Sevices.InSQL
             _UserManager = UserManager;
         }
 
-        public async Task<IEnumerable<Order>> GetUserOrder(string UserName)
+        public async Task<IEnumerable<Order>> GetUserOrders(string UserName)
         {
             var orders = await _db.Orders
                .Include(o => o.User)
