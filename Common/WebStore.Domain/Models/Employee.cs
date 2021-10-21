@@ -1,15 +1,21 @@
 ﻿namespace WebStore.Domain.Models
 {
+    /// <summary>Информация о сотруднике</summary>
     public class Employee
     {
+        /// <summary>Идентификатор сотрудника</summary>
         public int Id { get; set; }
 
+        /// <summary>Имя сотрудника</summary>
         public string FirstName { get; set; }
 
+        /// <summary>Фамилия сотрудника</summary>
         public string LastName { get; set; }
 
+        /// <summary>Отчество сотрудника</summary>
         public string Patronymic { get; set; }
 
+        /// <summary>Возраст сотрудника</summary>
         public int Age { get; set; }
     }
 
