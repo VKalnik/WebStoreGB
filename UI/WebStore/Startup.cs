@@ -3,20 +3,15 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using WebStore.DAL.Context;
 using WebStore.Domain.Entities.Identity;
 using WebStore.Infrastructure.Conventions;
 using WebStore.Infrastructure.Middleware;
 using WebStore.Interfaces.Services;
 using WebStore.Interfaces.TestAPI;
-using WebStore.Services.Data;
 using WebStore.Services.Sevices.InCookies;
-using WebStore.Services.Sevices.InMemory;
-using WebStore.Services.Sevices.InSQL;
 using WebStore.WebAPI.Clients.Employees;
 using WebStore.WebAPI.Clients.Identity;
 using WebStore.WebAPI.Clients.Orders;
@@ -85,21 +80,13 @@ namespace WebStore
                 opt.SlidingExpiration = true;
             });
 
-            //services.AddSingleton<IEmployeesData, InMemoryEmployeesData>();
-            //services.AddSingleton<IProductData, InMemoryProductData>();
-            //services.AddScoped<IProductData, SqlProductData>();
             services.AddScoped<ICartService, InCookiesCartService>();
-            //services.AddScoped<IOrderService, SqlOrderService>();
 
-            //services.AddHttpClient<IValuesService, ValuesClient>(client => client.BaseAddress = new (Configuration["WebAPI"]));
             services.AddHttpClient("WebStoreWebAPI", client => client.BaseAddress = new(Configuration["WebAPI"]))
                .AddTypedClient<IValuesService, ValuesClient>()
                .AddTypedClient<IEmployeesData, EmployeesClient>()
                .AddTypedClient<IProductData, ProductsClient>()
                .AddTypedClient<IOrderService, OrdersClient>();
-
-            //services.AddScoped<IEmployeesData, InMemoryEmployeesData>();
-            //services.AddTransient<IEmployeesData, InMemoryEmployeesData>();
 
             services.AddControllersWithViews(opt => opt.Conventions.Add(new TestControllerConventions()))
                .AddRazorRuntimeCompilation();
