@@ -17,6 +17,8 @@
 
         /// <summary>Возраст сотрудника</summary>
         public int Age { get; set; }
+
+        public override string ToString() => $"[{Id}] {LastName} {FirstName} {Patronymic} ({Age})";
     }
 
     //public record Employee2(int Id, string LastName, string FirstName, string Patronymic, int Age);
