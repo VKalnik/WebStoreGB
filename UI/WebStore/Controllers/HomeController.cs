@@ -9,14 +9,13 @@ namespace WebStore.Controllers
 
         public IActionResult Exception(string Message) => throw new InvalidOperationException(Message ?? "Ошибка в контроллере!");
 
-        public IActionResult Error404() => View();
-
-        public IActionResult Checkout() => View();
-
         public IActionResult Contacts() => View();
 
         public IActionResult Status(string id)
         {
+            if (id is null)
+                throw new ArgumentNullException(nameof(id));
+            
             switch (id)
             {
                 default: return Content($"Status code --- {id}");

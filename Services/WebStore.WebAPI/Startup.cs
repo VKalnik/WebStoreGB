@@ -14,9 +14,9 @@ using WebStore.Domain.Entities.Identity;
 using WebStore.Interfaces.Services;
 using WebStore.Logger;
 using WebStore.Services.Data;
-using WebStore.Services.Sevices.InCookies;
-using WebStore.Services.Sevices.InMemory;
-using WebStore.Services.Sevices.InSQL;
+using WebStore.Services.Services.InCookies;
+using WebStore.Services.Services.InMemory;
+using WebStore.Services.Services.InSQL;
 
 namespace WebStore.WebAPI
 {

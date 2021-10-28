@@ -6,7 +6,7 @@ using WebStore.Domain.ViewModels;
 using WebStore.Interfaces.Services;
 using WebStore.Services.Mapping;
 
-namespace WebStore.Services.Sevices.InCookies
+namespace WebStore.Services.Services.InCookies
 {
     public class InCookiesCartService : ICartService
     {
