@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Security.Claims;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -17,7 +18,7 @@ namespace WebStore.Tests.Controllers
     public class CartControllerTests
     {
         [TestMethod]
-        public void CheckOut_ModelState_Invalid_Returns_View_with_Model()
+        public async Task CheckOut_ModelState_Invalid_Returns_View_with_Model()
         {
             const string expected_description = "Test description";
 
@@ -32,7 +33,7 @@ namespace WebStore.Tests.Controllers
                 Description = expected_description,
             };
 
-            var result = controller.CheckOut(order_model, order_service_mock.Object);
+            var result = await controller.CheckOut(order_model, order_service_mock.Object);
 
             var view_result = Assert.IsType<ViewResult>(result);
 
@@ -46,7 +47,7 @@ namespace WebStore.Tests.Controllers
         }
 
         [TestMethod]
-        public void CheckOut_ModelState_Valid_Call_Service_and_Returns_Redirect()
+        public async Task CheckOut_ModelState_Valid_Call_Service_and_Returns_Redirect()
         {
             const string expected_user = "Test user";
 
@@ -96,7 +97,7 @@ namespace WebStore.Tests.Controllers
                 Description = expected_description,
             };
 
-            var result = controller.CheckOut(order_model, order_service_mock.Object);
+            var result = await controller.CheckOut(order_model, order_service_mock.Object);
 
             var redirect_result = Assert.IsType<RedirectToActionResult>(result);
             Assert.Equal(nameof(CartController.OrderConfirmed), redirect_result.ActionName);
