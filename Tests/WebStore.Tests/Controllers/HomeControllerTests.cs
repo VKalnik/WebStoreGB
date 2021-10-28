@@ -59,6 +59,7 @@ namespace WebStore.Tests.Controllers
 
         [TestMethod]
         [DataRow("123")]
+        [DataRow("QWE")]
         public void Status_with_id_Returns_Content(string id)
         {
             //const string id = "123";
