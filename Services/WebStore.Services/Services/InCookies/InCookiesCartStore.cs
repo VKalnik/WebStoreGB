@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using WebStore.Domain.Entities;
 using WebStore.Interfaces.Services;
 
-namespace WebStore.Services.Sevices.InCookies
+namespace WebStore.Services.Services.InCookies
 {
     public class InCookiesCartStore : ICartStore
     {
