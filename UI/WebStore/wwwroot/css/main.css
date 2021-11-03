@@ -262,7 +262,7 @@ a#scrollUp {
     outline: medium none;
     padding-left: 10px;
     width: 155px;
-    /*background-image: url(../images/home/searchicon.png);*/
+    background-image: url(../images/home/searchicon.png);
     background-repeat: no-repeat;
     background-position: 130px;
 }
@@ -2516,4 +2516,8 @@ h2.title {
 
 .contact-info .social-networks ul li a:hover {
     color: #FE980F;
+}
+
+.panel-body ul li.active, .brands-name ul li.active {
+    text-decoration: underline;
 }
