@@ -6,8 +6,9 @@
 <section>
     <div class="container">
         <div class="row">
+            <vc:bread-crumbs/>
             <div class="col-sm-3">
-                <partial name="Partial/_LeftSideBar" />
+                <partial name="Partial/_LeftSideBar"/>
             </div>
 
             <div class="col-sm-9 padding-right">
@@ -15,7 +16,7 @@
                     <!--product-details-->
                     <div class="col-sm-5">
                         <div class="view-product">
-                            <img src="~/images/shop/@Model.ImageUrl" alt="" />
+                            <img src="~/images/shop/@Model.ImageUrl" alt=""/>
                             <h3>ZOOM</h3>
                         </div>
                         <div id="similar-product" class="carousel slide" data-ride="carousel">
@@ -56,13 +57,13 @@
                             @*<img src="~/images/product-details/new.jpg" class="newarrival" alt="" />*@
                             <h2>@Model.Name</h2>
                             <p>Артикул: @Model.Id.ToString("00000000")</p>
-                            <img src="~/images/product-details/rating.png" alt="" />
+                            <img src="~/images/product-details/rating.png" alt=""/>
                             <span>
                                 <span>@Model.Price.ToString("C")"</span>
                                 <label>Количество:</label>
-                                <input type="text" value="3" />
+                                <input type="text" value="3"/>
                                 <a asp-controller="Cart" asp-action="Add" asp-route-Id="@Model.Id"
-                                    class="btn btn-default cart">
+                                   class="btn btn-default cart">
                                     <i class="fa fa-shopping-cart"></i>
                                     В корзину
                                 </a>
@@ -71,14 +72,14 @@
                             <p><b>Состояние:</b> Новое</p>
                             <p><b>Категория:</b> @Model.Section</p>
                             <p><b>Бренд:</b> @Model.Brand</p>
-                            <a href=""><img src="~/images/product-details/share.png" class="share img-responsive" alt="" /></a>
+                            <a href=""><img src="~/images/product-details/share.png" class="share img-responsive" alt=""/></a>
                         </div><!--/product-information-->
                     </div>
                 </div><!--/product-details-->
 
                 <partial name="Partial/_CategoryTab"/>
 
-                <partial name="Partial/_RecomendetItems" />
+                <partial name="Partial/_RecomendetItems"/>
 
             </div>
         </div>
