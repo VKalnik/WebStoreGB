@@ -22,10 +22,22 @@
                     {
                         <tr>
                             <td class="cart_product">
-                                <a href=""><img src="~/images/shop/@product.ImageUrl" alt=""></a>
+                                <a asp-controller="Catalog"
+                                   asp-action="Details"
+                                   asp-route-Id="@product.Id"
+                                   asp-route-BrandId="@Context.Request.Query["BrandId"]"
+                                   asp-route-SectionId="@Context.Request.Query["SectionId"]">
+                                    <img src="~/images/shop/@product.ImageUrl" alt="">
+                                </a>
                             </td>
                             <td class="cart_description">
-                                <h4><a href="">@product.Name</a></h4>
+                                <h4><a asp-controller="Catalog"
+                                       asp-action="Details"
+                                       asp-route-Id="@product.Id"
+                                       asp-route-BrandId="@Context.Request.Query["BrandId"]"
+                                       asp-route-SectionId="@Context.Request.Query["SectionId"]">
+                                    @product.Name
+                                </a></h4>
                                 <p>Артикул: @product.Id.ToString("00000000")</p>
                             </td>
                             <td class="cart_price" data-price="@product.Price">
