@@ -24,7 +24,7 @@
             .fail(function () {console.log("addToCart fail");});
     },
 
-    showToolTip: function() {
+    showToolTip: function(button) {
         button.tooltip({ title: "Добавлено в корзину!" }).tooltip("show");
         setTimeout(function() {
                 button.tooltip("destroy");
