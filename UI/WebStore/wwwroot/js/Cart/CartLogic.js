@@ -1,10 +1,10 @@
-﻿Cart= {
+﻿Cart = {
     _properties: {
         getCartViewLink: "",
         addToCartLink: ""
     },
 
-    init: function(properties) {
+    init: function (properties) {
         $.extend(Cart._properties, properties);
 
         $(".add-to-cart").click(Cart.addToCart);
@@ -39,5 +39,5 @@
                 container.html(cartHtml);
             })
             .fail(function () { console.log("refreshCartView fail"); });
-    },
+    }
 }

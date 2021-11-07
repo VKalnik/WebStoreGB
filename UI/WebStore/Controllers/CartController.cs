@@ -66,7 +66,7 @@ namespace WebStore.Controllers
         public IActionResult AddAPI(int Id)
         {
             _CartService.Add(Id);
-            return Json(new {Id, message = $"Товар с Id:{Id} добавлен в корзину"});
+            return Json(new { Id, message = $"Товар с Id:{Id} добавлен в корзину" });
         }
 
         public IActionResult DecrementAPI(int Id)
