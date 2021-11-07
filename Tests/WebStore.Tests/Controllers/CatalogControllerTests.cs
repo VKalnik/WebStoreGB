@@ -59,7 +59,7 @@ namespace WebStore.Tests.Controllers
                });
 
             var configuration_mock = new Mock<IConfiguration>();
-            configuration_mock.Setup(c => c["CatalogPageSize"]).Returns("4");
+            configuration_mock.Setup(c => c["CatalogPageSize"]).Returns("6");
             
             var controller = new CatalogController(product_data_mock.Object, configuration_mock.Object);
 

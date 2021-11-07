@@ -10,5 +10,6 @@ namespace WebStore.Domain.ViewModels
 
         public IEnumerable<ProductViewModel> Products { get; set; }
 
+        public PageViewModel PageViewModel { get; set; }
     }
 }
