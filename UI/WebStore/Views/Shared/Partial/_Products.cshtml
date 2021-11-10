@@ -3,7 +3,7 @@
 <div class="features_items">
     <!--features_items-->
     <h2 class="title text-center">Товары</h2>
-    
+
     @foreach (var product in Model)
     {
         <div class="col-sm-4">
@@ -16,15 +16,14 @@
                             <a asp-controller="Catalog"
                                asp-action="Details"
                                asp-route-Id="@product.Id"
-                               asp-route-BrandId="@Context.Request.Query["BrandId"]" 
+                               asp-route-BrandId="@Context.Request.Query["BrandId"]"
                                asp-route-SectionId="@Context.Request.Query["SectionId"]">
                                 @product.Name
                             </a>
                         </p>
-                        <a asp-controller="Cart" 
-                           asp-action="Add" 
-                           asp-route-Id="@product.Id"
-                           class="btn btn-default add-to-cart">
+                        <a asp-controller="Cart" asp-action="Add" asp-route-Id="@product.Id"
+                           class="btn btn-default add-to-cart"
+                           data-id="@product.Id">
                             <i class="fa fa-shopping-cart"></i>В корзину
                         </a>
                     </div>
@@ -35,15 +34,14 @@
                                 <a asp-controller="Catalog"
                                    asp-action="Details"
                                    asp-route-Id="@product.Id"
-                                   asp-route-BrandId="@Context.Request.Query["BrandId"]" 
+                                   asp-route-BrandId="@Context.Request.Query["BrandId"]"
                                    asp-route-SectionId="@Context.Request.Query["SectionId"]">
                                     @product.Name
                                 </a>
                             </p>
-                            <a asp-controller="Cart" 
-                               asp-action="Add" 
-                               asp-route-Id="@product.Id" 
-                               class="btn btn-default add-to-cart">
+                            <a asp-controller="Cart" asp-action="Add" asp-route-Id="@product.Id"
+                               class="btn btn-default add-to-cart" 
+                               data-id="@product.Id">
                                 <i class="fa fa-shopping-cart"></i>В корзину
                             </a>
                         </div>
@@ -58,4 +56,5 @@
             </div>
         </div>
     }
+
 </div><!--features_items-->
