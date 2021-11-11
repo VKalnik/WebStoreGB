@@ -44,7 +44,7 @@
         <div class="col-md-4">
             <h4>Рендринг руками</h4>
 
-            <a class="btn btn-default">
+            <a class="btn btn-default" id="load-data-button">
                 Загрузка
             </a>
 
@@ -72,5 +72,23 @@
             panel.append("<br/>");
             panel.append("Server time:" + data.serverTime);
         }
+
+        $("#load-data-button").click(e => {
+            e.preventDefault();
+
+            console.log("Starting AJAX-request to server");
+
+            $.get("@Url.Action("GetJSON")", { id: 321, msg: "Hello", Delay: "1000" })
+                .done(data => {
+                    console.log("Response from server");
+
+                    const panel = $("#panel-js");
+                    panel.empty();
+                    panel.append("msg:" + data.message);
+                    panel.append("<br/>");
+                    panel.append("Server time:" + data.serverTime);
+                })
+                .fail();
+        });
     </script>
 }
