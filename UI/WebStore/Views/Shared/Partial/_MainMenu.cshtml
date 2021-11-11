@@ -5,7 +5,6 @@
             <a ws-is-active-route ws-ignore-action asp-controller="Catalog" asp-action="Index">Магазин<i class="fa fa-angle-down"></i></a>
             <ul role="menu" class="sub-menu">
                 <li><a ws-is-active-route ws-ignore-action asp-controller="Catalog" asp-action="Index">Каталог</a></li>
-                <li><a ws-is-active-route asp-controller="Cart" asp-action="Index">Корзина</a></li>
             </ul>
         </li>
         <li class="dropdown">
@@ -18,6 +17,8 @@
         <li><a ws-is-active-route asp-controller="Home" asp-action="Contacts">Контакты</a></li>
         <li><a ws-is-active-route asp-controller="Employees" asp-action="Index">Сотрудники</a></li>
         <li><a asp-controller="WebAPI" asp-action="Index" class="@IsActive("WebAPI")">WebAPI</a></li>
+        <li><a ws-is-active-route asp-controller="AjaxTest" asp-action="Index">AJAX</a></li>
+        <li><a ws-is-active-route asp-controller="AjaxTest" asp-action="Chat">SignalR</a></li>
     </ul>
 </div>
 
