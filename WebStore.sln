@@ -39,7 +39,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebStore.WebAPI.Tests", "Te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebStore.TestConsole", "Tests\WebStore.TestConsole\WebStore.TestConsole.csproj", "{EEAEA588-66B1-416B-AAA5-ABAE97D20219}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebStore.BlazorUI", "UI\WebStore.BlazorUI\WebStore.BlazorUI.csproj", "{8FB786E9-95FF-4C08-9A0E-029E3CAC766E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebStore.BlazorUI", "UI\WebStore.BlazorUI\WebStore.BlazorUI.csproj", "{8FB786E9-95FF-4C08-9A0E-029E3CAC766E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
